@@ -15,13 +15,12 @@ class Base_Elements_Tag:
     def __init__(self):
         self.html_code = ''
 
-        '''
-        html_code is end answer of your progress and is html code if print it   
-        '''
+    #     html_code is end answer of your progress and is html code if print it
+
     def __repr__(self):
         return self.html_code
 
-        '''if you print or return your object from this class it will return html code'''
+    #   if you print or return your object from this class it will return html code
     def tab_lines(self, code: str):
         inner = ''
         codes = code.split('\n')
@@ -29,17 +28,17 @@ class Base_Elements_Tag:
             inner += '\t' + str(i) + '\n'
         return inner
 
-        '''for more beautiful html code this wil add tab to all codes in any hungry tags'''
+    # for more beautiful html code this wil add tab to all codes in any hungry tags
 
     def general_tag(self, tag_name, args: set = None, attribute: dict = None, single=False, add_to_body=True,
                     inner=None, pyclass=None, pyid=None, pytype=None):
-        '''this function is basic customize html tags creator like p h1 a and other similar them
-        in tag_name you should enter name of your tag ilke p br and ...
-        some tags just are single. they don't have end tag like this <...> your inner </...> and the have inner
-        but when single is True it will create tags like <br>
-        I called the important html attribute in function entry like id as pyid , class as pyclass, and type as pytype
-        but for other attribute I used **kwargs for enter other and your customize attribute you can use like
-        example="attr_value"'''
+        # this function is basic customize html tags creator like p h1 a and other similar them
+        # in tag_name you should enter name of your tag ilke p br and ...
+        # some tags just are single. they don't have end tag like this <...> your inner </...> and the have inner
+        # but when single is True it will create tags like <br>
+        # I called the important html attribute in function entry like id as pyid , class as pyclass, and type as pytype
+        # but for other attribute I used **kwargs for enter other and your customize attribute you can use like
+        # example="attr_value"
         this_tag = ''
         this_tag += f'\n<{tag_name} '
         if pyclass is not None:
@@ -56,16 +55,16 @@ class Base_Elements_Tag:
             self.html_code += this_tag
         return this_tag
 
-        '''         and in above they are adding the important args to your html text for create greate html codes
-            and for creating our customize tags we can change the tag_name and single'''
+    #         and in above they are adding the important args to your html text for create greate html codes
+    #         and for creating our customize tags we can change the tag_name and single
     def hungry_tag(self, tag_name, pyclass=None, pyid=None, pytype=None, args: set = None, attribute: dict = None):
         starting_tag = ''
         ending_tag = f'\n</{tag_name}> \n'
-        ''' this function is basic customize html tags creator like class div section a and other similar them
-         in tag_name you should enter name of your tag ilke p br and ...
-         I called the important html attribute in function entry like id as pyid , class as pyclass, and type as pytype
-         but for other attribute I used **kwargs for enter other and your customize attribute you can use like
-         example="attr_value"'''
+        # this function is basic customize html tags creator like class div section a and other similar them
+        # in tag_name you should enter name of your tag ilke p br and ...
+        # I called the important html attribute in function entry like id as pyid , class as pyclass, and type as pytype
+        # but for other attribute I used **kwargs for enter other and your customize attribute you can use like
+        # example="attr_value"
 
         starting_tag += f'\n<{tag_name} '
         if pyclass is not None:
@@ -79,29 +78,29 @@ class Base_Elements_Tag:
 
         self.html_code = str(starting_tag) + self.tab_lines(self.html_code) + str(ending_tag)
 
-        '''really it will eat element tags before it
-          like html code =
-          <example1>...</example1>
-          <example2>...</example2>
-          <example3>...</example3>
+    # really it will eat element tags before it
+    #  like html code =
+    #  <example1>...</example1>
+    #  <example2>...</example2>
+    #  <example3>...</example3>
 
-         when you call hungry_tag like main.hungry_tag(tag_name , ...)
-         it will eat before him self element like:
-         <tag_name ... >
-         <example1>...</example1>
-         <example2>...</example2>
-         <example3>...</example3>
-         </tag_name>
-        '''
+    # when you call hungry_tag like main.hungry_tag(tag_name , ...)
+    # it will eat before him self element like:
+    # <tag_name ... >
+    # <example1>...</example1>
+    # <example2>...</example2>
+    # <example3>...</example3>
+    # </tag_name>
+
     def inner_tag(self, tag_name, add_to_body=True, inner=None, src=None, pyclass=None, pyid=None, args: set = None,
                   attribute: dict = None):
-        ''' this function is basic customize html tags creator like script div class a and other similar them
-         in inner_tag you should enter name of your tag ilke script class and ...
-         they have to include end tag like this <...> your inner </...> and the have inner
-         it did not support single tags
-         I called the important html attribute in function entry like id as pyid , class as pyclass, and type as pytype
-         but for other attribute I used **kwargs for enter other and your customize attribute you can use like
-         example="attr_value"'''
+        # this function is basic customize html tags creator like script div class a and other similar them
+        # in inner_tag you should enter name of your tag ilke script class and ...
+        # they have to include end tag like this <...> your inner </...> and the have inner
+        # it did not support single tags
+        # I called the important html attribute in function entry like id as pyid , class as pyclass, and type as pytype
+        # but for other attribute I used **kwargs for enter other and your customize attribute you can use like
+        # example="attr_value"
         this_tag = ''
         this_tag += f'\n<{tag_name}'
         if pyclass is not None:
@@ -119,8 +118,8 @@ class Base_Elements_Tag:
             self.html_code += this_tag
         return this_tag
 
-        '''and in above they are adding the important args to your html text for create greate html codes
-             and for creating our customize tags we can change the tag_name and single'''
+    #         and in above they are adding the important args to your html text for create greate html codes
+    #         and for creating our customize tags we can change the tag_name and single
 
     def add_before(self, main):
         self.html_code = str(main) + self.html_code

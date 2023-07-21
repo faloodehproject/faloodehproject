@@ -47,12 +47,6 @@ class Faloodeh:
         return session
 
 
-    def redirect(self, response, path:str):
-        response.headers = [('Location', str(path))]
-        response.status_code = 301
-        return response
-
-
     def add_exception_handler(self, exception_handler):
         self.exception_handler = exception_handler
 

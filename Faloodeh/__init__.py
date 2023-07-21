@@ -10,6 +10,3 @@ __all__ = [
     'Faloodeh_UI',
     'Faloodeh',
 ]
-'''
-and so this project is for your self , So try your self ;)
-'''
