@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="mb-5">
+    <div class="container">
+       <div class="row">
+          <div class="col-12">
+             <div class="page-body bg-white rounded p-3" style="
+             margin-top: 10px;
+         ">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+         <div class="container">
+            <h2>نوشتن پست</h2>
+            <br>
+            <form method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for = "name">موضوع</label>
+                <input type = "text" class = "form-control" placeholder = "موضوع" name="title">
+                <br>
+                <label for = "name">زیر دامنه</label>
+                <input type = "text" class = "form-control" placeholder = "زیر دامنه" name="slug">
+                <br>
+                <label for = "name">عکس اصلی</label>
+                <input type="file" name="image" id="image" class="form-control" placeholder="عکس">
+                <br>
+                <label for = "name">متن اصلی</label>
+                <textarea class = "form-control" rows = "20" name="text"></textarea>
+                <br>
+                <button type="submit" class="btn btn-outline-info">ارسال</button>
+            </form>
+          </div>
+         </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+{% endblock %}
