@@ -1,5 +1,6 @@
 from Faloodeh import faloorun, Faloodeh
 from models import Post, session
+from templates import about
 app = Faloodeh()
 
 
@@ -12,7 +13,12 @@ def home(request, response):
 
 
 def about_page(request, response):
-    response.body = app.template('blog/about_page.html', context={}).encode()
+    response.body = app.template(
+        'blog/about_page.html', 
+        context={
+            'main_content': str(about.html)
+    }
+    ).encode()
 
 def create_post(request, response):
     if request.method == 'POST':
@@ -54,5 +60,6 @@ app.host = '127.0.0.1'
 app.port = 5000
 # faloorun(host=app.host, port=app.port, app=app)
 if __name__ == '__main__':
+    
     from paste import httpserver
     httpserver.serve(app, host=app.host, port=app.port)
