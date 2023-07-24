@@ -1,0 +1,24 @@
+# mkdocs.yml
+site_name: Faloodeh Docs
+
+theme:
+  name: "material"
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - home: index.md
+  - Installation: installation.md
+  - tutorials.md
+  - How-To Guides: how-to-guides.md
+  - reference:
+    - references: reference.md
+    - Faloodeh UI: reference\faloodeh_ui.md
+    - Faloodeh Framwork: reference\faloodeh_framwork.md
+    - Faloodeh Sqlalchemy: reference\faloodeh_sqlalchemy.md
+    - Faloodeh WSGI: reference\faloodeh_wsgi.md
+  - explanation.md
+
